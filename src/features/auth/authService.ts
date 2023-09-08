@@ -15,7 +15,7 @@ const login = async (
 ): Promise<IResponse<IDataLoginSuccess>> => {
   try {
     const response = await axios.post(
-      'http://localhost:8080/api/v1/auth/login',
+      `${process.env.BASE_URL}/auth/login`,
       data
     );
     // const response = await myAxios.post('/auth/login', data);
@@ -36,7 +36,7 @@ const login = async (
 const getInforUserWithOauth2 = async (): Promise<
   IResponse<IDataLoginSuccess>
 > => {
-  const response = await axios.get('http://localhost:8080/api/v1/auth/status', {
+  const response = await axios.get(`${process.env.BASE_URL}/auth/status`, {
     withCredentials: true,
   });
   if (response.data.status === 200) {
@@ -52,7 +52,7 @@ const getInforUserWithOauth2 = async (): Promise<
 
 const register = async (data: IRegisterData) => {
   const response = await axios.post(
-    'http://localhost:8080/api/v1/auth/register',
+    `${process.env.BASE_URL}/auth/register`,
     data
   );
   return response;

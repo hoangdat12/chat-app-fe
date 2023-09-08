@@ -9,7 +9,7 @@ import {
 const user = getUserLocalStorageItem();
 const token = getTokenLocalStorageItem();
 const myAxios = axios.create({
-  baseURL: 'http://localhost:8080/api/v1',
+  baseURL: process.env.BASE_URL,
   headers: {
     'x-client-id': user?._id,
   },
@@ -50,7 +50,7 @@ myAxios.interceptors.response.use(
           return;
         }
         const refreshResponse = await myAxios.post(
-          'http://localhost:8080/api/v1/auth/refresh-token',
+          `${process.env.BASE_URL}/auth/refresh-token`,
           {},
           {
             headers: {

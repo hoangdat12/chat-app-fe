@@ -12,7 +12,7 @@ const LoginWith: FC<IProp> = ({ className, name, Icon }) => {
   const dispatch = useAppDispatch();
   const handleLoginWithOauth2 = () => {
     const nameUrl = name.charAt(0).toLowerCase() + name.slice(1);
-    const loginOauth2Api = `http://localhost:8080/api/v1/auth/login/${nameUrl}`;
+    const loginOauth2Api = `${process.env.BASE_URL}/auth/login/${nameUrl}`;
     const newWindow = window.open(
       loginOauth2Api,
       '_blank',
