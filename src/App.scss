@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 2px solid transparent; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.animate__animated.animate__fadeInLeft {
+  --animate-duration: 0.5s;
+}
+
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 0.5s;
+}
+
+.animate__animated {
+  --animate-duration: 0.5s;
+}
+
+.w-user-conversation {
+  width: calc(100% - 4rem);
+}
+
+.max-h-create-conversation {
+  max-height: calc(90% - 7rem);
+}
+
+.hover-message-show-button:hover .show-button-more {
+  display: flex !important;
+}
+
+.top-more-feed {
+  top: calc(-100% - 6rem);
+}
+
+.overflow-wrap {
+  overflow-wrap: break-word;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hover-parent:hover .hover-child {
+  display: flex !important;
+}
+
+.backdropModel {
+  position: relative;
+  backdrop-filter: blur(20px);
+}
+
+.image-editor {
+  color: #61dafb;
+  border: solid 1px #2b2a30;
+  max-height: 100%;
+}
+
+.advanced-cropper-preview__content {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.same-width {
+  height: same-as-width;
+}
+
+.shadow-box {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
